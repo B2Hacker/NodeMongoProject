@@ -1,28 +1,28 @@
-GET http://localhost:3000/subscribers
+GET http://localhost:3000/api/subscribers
 
 ###
 
-GET http://localhost:3000/subscribers/5f71554fc2c6b30508256a04
+GET http://localhost:3000/api/subscribers/5f716144d982b3577888b9b6
 
 ###
 
-POST http://localhost:3000/subscribers
+POST http://localhost:3000/api/subscribers
 Content-Type: application/json 
 
 {
-    "name": "AmazingPerson69",
-    "subscribersToChannel": "Web Dev Simple"
+    "name": "AmazingPerson69420",
+    "subscribersToChannel": "Web Dev Simply"
 }
 
 ###
 
-DELETE http://localhost:3000/subscribers/5f71554fc2c6b30508256a04
+DELETE http://localhost:3000/api/subscribers/5f7a50827a7bf17a1801f879
 
 ###
 
-PATCH  http://localhost:3000/subscribers/5f716144d982b3577888b9b6
+PATCH  http://localhost:3000/api/subscribers/5f716144d982b3577888b9b6
 Content-Type: application/json
 
 {
-    "name": "New name"
+    "name": "b2"
 }

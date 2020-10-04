@@ -3,7 +3,7 @@ const router = express.Router()
 const Subscriber = require('../models/subscribers')
 
 //view all
-router.get('/', async (req, res) => {
+router.get('/subscribers', async (req, res) => {
     try {
         const subscribers = await Subscriber.find()
         res.json(subscribers)
@@ -12,11 +12,11 @@ router.get('/', async (req, res) => {
     }
 })
 //view one
-router.get('/:id', getSubscriber, (req, res) => {
+router.get('/subscribers/:id', getSubscriber, (req, res) => {
     res.json(res.subscriber)
 })
 //create one
-router.post('/', async (req, res) => {
+router.post('/subscribers', async (req, res) => {
     const subscribers = new Subscriber({
         name: req.body.name,
         subscribersToChannel: req.body.subscribersToChannel
@@ -29,7 +29,7 @@ router.post('/', async (req, res) => {
     }
 })
 //update one
-router.patch('/:id', getSubscriber, async (req, res) => {
+router.patch('/subscribers/:id', getSubscriber, async (req, res) => {
     if (req.body.name != null) {
         res.subscriber.name = req.body.name
     }
@@ -44,7 +44,7 @@ router.patch('/:id', getSubscriber, async (req, res) => {
     }
 })
 //delete one
-router.delete('/:id', getSubscriber, async (req, res) => {
+router.delete('/subscribers/:id', getSubscriber, async (req, res) => {
     try {
         await res.subscriber.remove()
         res.json({message: 'deleted subscriber'})
